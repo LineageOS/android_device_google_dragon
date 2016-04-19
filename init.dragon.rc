@@ -35,9 +35,6 @@ on late-init
     write /sys/kernel/rcu_expedited 1
 
 on early-boot
-    # Update dm-verity state and set partition.*.verified properties
-    verity_update_state
-
 # Set watchdog timer to 30 seconds and pet it every 10 seconds to get a 20 second margin
 service watchdogd /sbin/watchdogd 10 20
     class core
@@ -187,9 +184,6 @@ on boot
     write /sys/devices/57000000.gpu/power/autosuspend_delay_ms 520
 
 on fs
-    # Enable verity notification
-    write /sys/module/dm_verity/parameters/error_behavior notify
-
     mount_all /fstab.dragon
 
 # run the touch firmware update script as soon as non-tmpfs /data is ready

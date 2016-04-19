@@ -31,6 +31,12 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a7
 
+# Build kernel inline
+TARGET_KERNEL_CONFIG := dragon_defconfig
+TARGET_KERNEL_SOURCE := kernel/google/dragon
+BOARD_KERNEL_IMAGE_NAME := Image.fit
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+
 # Disable emulator for "make dist" until there is a 64-bit qemu kernel
 BUILD_EMULATOR := false
 

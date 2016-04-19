@@ -21,18 +21,11 @@ ifeq ($(wildcard vendor/nvidia/dragon-tlk/tlk),vendor/nvidia/dragon-tlk/tlk)
     SECURE_OS_BUILD ?= tlk
 endif
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/google/dragon-kernel/Image.fit
-else
-LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
 LOCAL_FSTAB := $(LOCAL_PATH)/fstab.dragon
 
 TARGET_RECOVERY_FSTAB = $(LOCAL_FSTAB)
 
 PRODUCT_COPY_FILES := \
-    $(LOCAL_KERNEL):kernel \
     $(LOCAL_PATH)/dump_bq25892.sh:system/bin/dump_bq25892.sh \
     $(LOCAL_PATH)/touchfwup.sh:system/bin/touchfwup.sh \
     $(LOCAL_PATH)/init.dragon.rc:root/init.dragon.rc \
@@ -58,7 +51,7 @@ PRODUCT_PACKAGES += \
     CrashReportProvider \
     fwtool
 
-ifeq ($(TARGET_BUILD_VARIANT),eng)
+ifeq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_PACKAGES += \
     tinyplay \
     tinycap \
@@ -155,9 +148,10 @@ $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-he
 
 # set default USB configuration
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp \
-    ro.adb.secure=1 \
-    ro.sf.lcd_density=320 \
+    sys.usb.config=mtp,adb \
+    persist.sys.usb.config=mtp,adb \
+    ro.adb.secure=0 \
+    ro.sf.lcd_density=300 \
     ro.opengles.version=196609
 
 # for audio
@@ -183,11 +177,12 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 # TODO(dgreid) - Add back verity dependencies like flounder has.
 
-$(call inherit-product, build/target/product/vboot.mk)
-$(call inherit-product, build/target/product/verity.mk)
+#$(call inherit-product, build/target/product/vboot.mk)
+#$(call inherit-product, build/target/product/verity.mk)
+
 # including verity.mk automatically enabled boot signer which conflicts with
 # vboot
-PRODUCT_SUPPORTS_BOOT_SIGNER := false
+#PRODUCT_SUPPORTS_BOOT_SIGNER := false
 PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/platform/700b0600.sdhci/by-name/APP
 PRODUCT_VENDOR_VERITY_PARTITION := /dev/block/platform/700b0600.sdhci/by-name/VNR
 
