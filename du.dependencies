@@ -1,7 +1,12 @@
 [
-  {
-    "repository":   "android_kernel_google_dragon",
+ {
+    "repository":   "DirtyUnicorns/android_kernel_google_dragon",
     "target_path":  "kernel/google/dragon",
-    "branch":       "m-test"
+    "branch":       "m"
+ },
+ {
+    "repository":   "DirtyUnicorns/android_vendor_nvidia",
+    "target_path":  "vendor/nvidia",
+    "branch":       "m"
  }
 ]
