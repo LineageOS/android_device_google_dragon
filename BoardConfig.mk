@@ -131,4 +131,7 @@ ifeq ($(SECURE_OS_BUILD),tlk)
   BOARD_SUPPORT_ROLLBACK_PROTECTION := true
 endif
 
+# Enable workaround for slow rom flash
+BOARD_SUPPRESS_SECURE_ERASE := true
+
 BOARD_HAL_STATIC_LIBRARIES := libdumpstate.dragon libhealthd.dragon
