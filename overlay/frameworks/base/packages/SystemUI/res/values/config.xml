@@ -30,4 +30,7 @@
         wifi,bt,dnd,airplane,rotation,location,cast,themes
     </string>
 
+    <!-- Pulse stroke width -->
+    <dimen name="config_pulsePathStrokeWidth">25dp</dimen>
+
 </resources>
