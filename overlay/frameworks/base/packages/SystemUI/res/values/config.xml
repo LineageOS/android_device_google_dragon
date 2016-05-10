@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+** Copyright 2012, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+
+<!-- These resources are around just to allow their values to be customized
+     for different hardware and product builds. -->
+<resources>
+
+    <!-- The default tiles to display in QuickSettings -->
+    <string name="quick_settings_tiles_default" translatable="false"> wifi,bt,inversion,dnd,airplane,rotation,location,cast,ambient_display,screenshot,nfc,sync,screenoff,timeout,brightness,music,reboot,battery_saver,expanded_desktop,adb_network,compass,themes,navigation_bar,ime,caffeine,volume_panel
+    </string>
+
+    <!-- The default tiles to reset to in QuickSettings -->
+    <string name="quick_settings_tiles_reset" translatable="false">
+        wifi,bt,dnd,airplane,rotation,location,cast,themes
+    </string>
+
+</resources>
