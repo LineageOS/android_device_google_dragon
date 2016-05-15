@@ -187,6 +187,9 @@ on boot
     write /sys/devices/57000000.gpu/power/autosuspend_delay_ms 520
 
 on fs
+    # Enable verity notification
+    write /sys/module/dm_verity/parameters/error_behavior notify
+
     mount_all /fstab.dragon
 
 # run the touch firmware update script as soon as non-tmpfs /data is ready

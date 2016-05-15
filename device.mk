@@ -51,7 +51,7 @@ PRODUCT_PACKAGES += \
     CrashReportProvider \
     fwtool
 
-ifeq ($(TARGET_BUILD_VARIANT),user)
+ifeq ($(TARGET_BUILD_VARIANT),userdebug)
 PRODUCT_PACKAGES += \
     tinyplay \
     tinycap \
