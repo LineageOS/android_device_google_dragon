@@ -171,6 +171,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.audio.monitorRotation=true \
     ro.frp.pst=/dev/block/platform/700b0600.sdhci/by-name/PST
 
+# DRM Mappings
+PRODUCT_PROPERTY_OVERRIDES += \
+camera.flash_off=0 \
+drm.service.enabled=true \
+ro.com.widevine.cachesize=16777216
+
 # for keyboard key mappings
 PRODUCT_PACKAGES += \
     DragonKeyboard
