@@ -21,10 +21,6 @@
 # lines, aosp and dragon, hence its name.
 #
 
-# Build Launcher3
-PRODUCT_PACKAGES += \
-        Launcher3
-
 PRODUCT_PROPERTY_OVERRIDES := \
         net.dns1=8.8.8.8 \
         net.dns2=8.8.4.4
@@ -35,7 +31,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
 PRODUCT_NAME := aosp_dragon
 PRODUCT_DEVICE := dragon
-PRODUCT_BRAND := google
+PRODUCT_BRAND := Google
 PRODUCT_MODEL := Pixel C
-PRODUCT_MANUFACTURER := google
-#PRODUCT_RESTRICT_VENDOR_FILES := true
+PRODUCT_MANUFACTURER := Google
+
