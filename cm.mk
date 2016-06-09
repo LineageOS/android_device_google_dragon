@@ -25,10 +25,10 @@
 $(call inherit-product, device/google/dragon/aosp_dragon.mk)
 
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/du/config/common_full_tablet_wifionly.mk)
-$(call inherit-product, vendor/du/config/nfc_enhanced.mk)
+$(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
+$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 
-PRODUCT_NAME := du_dragon
+PRODUCT_NAME := cm_dragon
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=dragon \
