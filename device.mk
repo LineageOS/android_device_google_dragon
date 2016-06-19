@@ -107,6 +107,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/google/dragon/audio_effects.conf:system/etc/audio_effects.conf
 
+PRODUCT_COPY_FILES += \
+    device/google/dragon/Vendor_18d1_Product_5018_Version_0102.idc:system/usr/idc/Vendor_18d1_Product_5018_Version_0102.idc
+
 PRODUCT_AAPT_CONFIG := normal large xlarge hdpi xhdpi xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
